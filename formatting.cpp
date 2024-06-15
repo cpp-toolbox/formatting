@@ -39,21 +39,14 @@ std::ostream &operator<<(std::ostream &os, const NetworkedInputSnapshot &snapsho
 }
 
 std::ostream &operator<<(std::ostream &os, const NetworkedCharacterData &data) {
-    os << "{\n"
-       << "    client_id: " << data.client_id << ",\n"
-       << "    cihtems_of_last_server_processed_input_snapshot: "
-       << data.cihtems_of_last_server_processed_input_snapshot << ",\n"
-       << "    character_position: (" << data.character_x_position << ", " << data.character_y_position << ", "
+    os << "Client ID: " << data.client_id << ",\n"
+       << "Client Input History Insertion Time (epoch ms): " << data.cihtems_of_last_server_processed_input_snapshot
+       << ",\n"
+       << "Position: (" << data.character_x_position << ", " << data.character_y_position << ", "
        << data.character_z_position << "),\n"
-       << "    character_velocity: (" << data.character_x_velocity << ", " << data.character_y_velocity << ", "
+       << "Velocity: (" << data.character_x_velocity << ", " << data.character_y_velocity << ", "
        << data.character_z_velocity << "),\n"
-       << "    camera_yaw_angle: " << data.camera_yaw_angle << ",\n"
-       << "    camera_pitch_angle: " << data.camera_pitch_angle << "\n"
-       << "}";
-    return os;
-}
-
-std::ostream &operator<<(std::ostream &os, const JPH::Vec3 &vector) {
-    os << "(" << vector.GetX() << ", " << vector.GetY() << ", " << vector.GetZ() << ")";
+       << "Camera Yaw Angle: " << data.camera_yaw_angle << ",\n"
+       << "Camera Pitch Angle: " << data.camera_pitch_angle;
     return os;
 }
