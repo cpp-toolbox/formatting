@@ -19,6 +19,8 @@ std::ostream &operator<<(std::ostream &os, const Physics &physics) {
         os << "Client ID: " << client_id << "\n";
         os << "Position: (" << position.GetX() << ", " << position.GetY() << ", " << position.GetZ() << ")\n";
         os << "Velocity: (" << velocity.GetX() << ", " << velocity.GetY() << ", " << velocity.GetZ() << ")\n";
+        os << "On Ground: "
+           << (character->GetGroundState() == JPH::CharacterVirtual::EGroundState::OnGround ? "1" : "0") << "\n";
     }
     return os;
 }
@@ -47,6 +49,6 @@ std::ostream &operator<<(std::ostream &os, const NetworkedCharacterData &data) {
        << "Velocity: (" << data.character_x_velocity << ", " << data.character_y_velocity << ", "
        << data.character_z_velocity << "),\n"
        << "Camera Yaw Angle: " << data.camera_yaw_angle << ",\n"
-       << "Camera Pitch Angle: " << data.camera_pitch_angle;
+       << "Camera Pitch Angle: " << data.camera_pitch_angle << "\n";
     return os;
 }
