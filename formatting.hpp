@@ -1,5 +1,6 @@
 #include "../interaction/multiplayer_physics/physics.hpp"
 #include "../networked_input_snapshot/networked_input_snapshot.hpp"
+#include "../networked_character_data/networked_character_data.hpp"
 #include "spdlog/fmt/ostr.h" // must be included
 #include "spdlog/sinks/stdout_sinks.h"
 #include "spdlog/spdlog.h"
